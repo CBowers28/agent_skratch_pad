@@ -65,6 +65,11 @@ Each milestone is intended to map to one ticket so scope stays reviewable.
 - **M4 — Flow connections:** Typed arrows/edges between blocks with their own
   metadata.
 - **M5 — Persistence & sharing:** Durable save/load; export/import of a design.
+- **M6 — Real-time multiplayer:** Multiple users editing the same canvas live.
+  In scope as a future goal (confirmed CHR-17). Likely built on tldraw's sync
+  offering (`@tldraw/sync`) or a self-hosted sync backend. **Design earlier
+  milestones so the store/data model does not preclude this** (avoid assumptions
+  that only one client mutates state).
 
 ## 5. Requirements for M1 (the buildable next step)
 
@@ -101,16 +106,13 @@ Each milestone is intended to map to one ticket so scope stays reviewable.
     └── styles/        global styles
 ```
 
-## 7. Open questions
+## 7. Open questions — resolved
 
-1. **Persistence scope:** Is local-only (browser) fine through M4, with a backend
-   deferred to M5? (Assumed yes.)
-2. **Collaboration:** Is real-time multiplayer in scope eventually, or single-user
-   only? (Affects backend choices; assumed out of scope for now.)
-3. **Design/branding:** Any naming or visual direction for the product, or keep the
-   "Flow Canvas" working title?
-4. **Image hosting:** Should images be embedded (data URLs / local) or uploaded to
-   storage? (Assumed embedded/local for M1.)
+1. ~~**Persistence scope:**~~ **Local-only** for now; backend deferred. (CHR-17)
+2. ~~**Collaboration:**~~ **Real-time multiplayer is in scope** as a future goal
+   (see M6). Earlier milestones must not preclude it. (CHR-17)
+3. ~~**Design/branding:**~~ Keep the **"Flow Canvas"** working title for now. (CHR-17)
+4. ~~**Image hosting:**~~ **Embedded/local** for M1. (CHR-17)
 
 ## 8. Decisions log
 
@@ -118,3 +120,6 @@ Each milestone is intended to map to one ticket so scope stays reviewable.
   Chosen for speed and extensibility toward scoped flow blocks. (CHR-17)
 - **2026-09-10:** Deliver M0 as docs-only for review before writing app code, per
   ticket instruction to scope first. (CHR-17)
+- **2026-09-11:** Requirements confirmed by product owner — persistence local-only;
+  real-time multiplayer in scope as future milestone (M6); keep "Flow Canvas"
+  working title; images embedded/local for M1. (CHR-17)
